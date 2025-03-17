@@ -1,0 +1,7 @@
+FROM postgres:15
+
+EXPOSE 5432
+
+ENV POSTGRES_DB=creatorlink
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
