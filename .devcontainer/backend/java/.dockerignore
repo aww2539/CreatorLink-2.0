@@ -1,0 +1,3 @@
+# Exclude Elixir and Python backend folders
+backend/**
+!backend/java

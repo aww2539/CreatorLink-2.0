@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: .devcontainer/frontend/Node.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-python
+      - backend-java
+      - backend-elixir
+      - database
+
+  database:
+    build:
+      context: ./.devcontainer/database
+      dockerfile: Postgres.Dockerfile
+    environment:
+      POSTGRES_DB: creatorlink
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  backend-elixir:
+    build:
+      context: .
+      dockerfile: .devcontainer/backend/elixir/Elixir.Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - database
+
+  backend-python:
+    build:
+      context: .
+      dockerfile: .devcontainer/backend/python/Python.Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  backend-java:
+    build:
+      context: .
+      dockerfile: .devcontainer/backend/java/Java.Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
