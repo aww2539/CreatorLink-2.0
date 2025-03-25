@@ -12,6 +12,7 @@ defmodule CreatorLinkWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CreatorLinkWeb.Plugs.VerifyToken
   end
 
   scope "/", CreatorLinkWeb do

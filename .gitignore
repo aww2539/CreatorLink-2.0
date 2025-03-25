@@ -1,6 +1,2 @@
 .vscode/
-.env
-
-
-# Python
-venv
+*.env

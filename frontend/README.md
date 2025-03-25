@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CreatorLink Frontend
 
-## Getting Started
+This is the frontend for CreatorLink, a platform designed for creators to showcase their work and connect with others. Built with Next.js and TypeScript, it provides a modern and responsive user interface.
 
-First, run the development server:
+## Project Structure
+
+The frontend project is structured as follows:
+
+- `src/app`: Contains the main application components and pages.
+  - `page.tsx`: The main landing page of the application. It fetches the current user and displays a welcome message.
+  - `layout.tsx`: Defines the root layout of the application, including metadata and the basic HTML structure.
+  - `globals.css`: Global CSS file that imports Tailwind CSS and defines global styles.
+- `public`: Contains static assets such as images and fonts.
+- `next.config.ts`: Configuration file for Next.js.
+- `tsconfig.json`: Configuration file for TypeScript.
+- `postcss.config.mjs`: Configuration file for PostCSS.
+- `eslint.config.mjs`: Configuration file for ESLint.
+- `package.json`: Lists project dependencies and scripts.
+
+## Running the Application
+
+### Development Mode
+
+To run the application in development mode, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the Next.js development server with turbopack.  You can then access the application in your browser at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production, use the following command:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will create an optimized production build of the application in the `.next` directory.  To start the production server, use:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Dependencies
 
-## Deploy on Vercel
+Key dependencies used in this project:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `next`: The React Framework for building web applications.
+- `react`: A JavaScript library for building user interfaces.
+- `react-dom`: Provides DOM-specific methods for React.
+- `typescript`: A typed superset of JavaScript that compiles to plain JavaScript.
+- `tailwindcss`: A utility-first CSS framework for rapidly designing custom user interfaces.
+- `@aws-sdk/client-cognito-identity-provider`: AWS SDK for Cognito integration.

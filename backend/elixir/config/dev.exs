@@ -5,7 +5,7 @@ config :creator_link, CreatorLink.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "creator_link_dev",
+  database: "creatorlink",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -24,7 +24,6 @@ config :creator_link, CreatorLinkWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "7mZfHJlMggkEzaGcMPATmzj6Ljd8Khr7WB1v0KSegLopMtGDXLGn9ovIhaZPJ+Wf",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:creator_link, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:creator_link, ~w(--watch)]}
