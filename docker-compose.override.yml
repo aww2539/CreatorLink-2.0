@@ -4,23 +4,46 @@ services:
   frontend:
     volumes:
       - type: bind
-        source: ./frontend
-        target: /workspace/frontend
+        source: .
+        target: .
 
   backend-elixir:
     volumes:
       - type: bind
-        source: ./backend/elixir
-        target: /workspace/backend/elixir
+        source: .
+        target: /workspace
+      - type: volume
+        source: backend-python
+        target: /workspace/backend/python
+      - type: volume
+        source: backend-java
+        target: /workspace/backend/java
 
   backend-python:
     volumes:
       - type: bind
-        source: ./backend/python
-        target: /workspace/backend/python
+        source: .
+        target: /workspace
+      - type: volume
+        source: backend-elixir
+        target: /workspace/backend/elixir
+      - type: volume
+        source: backend-java
+        target: /workspace/backend/java
 
   backend-java:
     volumes:
       - type: bind
-        source: ./backend/java
-        target: /workspace/backend/java
+        source: .
+        target: /workspace
+      - type: volume
+        source: backend-elixir
+        target: /workspace/backend/elixir
+      - type: volume
+        source: backend-python
+        target: /workspace/backend/python
+
+volumes:
+  backend-elixir:
+  backend-python:
+  backend-java:
