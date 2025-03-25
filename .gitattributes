@@ -1,0 +1,8 @@
+*.java linguist-language=Java
+*.gradle linguist-language=Java
+*.py linguist-language=Python
+*.pyc linguist-language=Python
+*.ex linguist-language=Elixir
+*.exs linguist-language=Elixir
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
