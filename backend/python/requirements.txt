@@ -2,7 +2,7 @@ asgiref==3.8.1
 certifi==2025.1.31
 cffi==1.17.1
 charset-normalizer==3.4.1
-cryptography==44.0.2
+cryptography==46.0.5
 Django==5.1.14
 django-cognito-jwt==0.0.4
 djangorestframework==3.15.2
@@ -11,5 +11,5 @@ psycopg2-binary==2.9.10
 pycparser==2.22
 PyJWT==2.10.1
 requests==2.32.4
-sqlparse==0.5.3
-urllib3==2.5.0
+sqlparse==0.5.4
+urllib3==2.6.3
